@@ -5,6 +5,7 @@ project(lru_algorithms CXX)
 set(tests
     lru_counter
     lru_stack
+    lru_aging
 )
 
 foreach(test ${tests})

@@ -14,6 +14,11 @@ namespace util
         return a.second < b.second;
     }
 
+    bool Max(std::pair<long long, int> a, std::pair<long long, int> b)
+    {
+        return a.second > b.second;
+    }
+
     class Search
     {
     public:
@@ -48,6 +53,12 @@ namespace util
         void update(int);
 
         int get_size();
+
+        ~stack()
+        {
+            delete [] s;
+            delete s;
+        }
     
     private:
         int* s;

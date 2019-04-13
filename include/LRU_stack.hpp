@@ -32,6 +32,8 @@ namespace page_replacement
                 
                 page_table_size = size;
 
+                frames = processes.size();
+
                 page_table.init(page_table_size);
             }    
 
@@ -42,6 +44,7 @@ namespace page_replacement
             // Custom stack implementation for stack implementation
             util::stack page_table;
             std::vector<int> incoming_process;
+            int frames;
 
             // Benchmarking tool
             tools::Benchmark init;
@@ -53,10 +56,20 @@ namespace page_replacement
             {
                 if(page_table.get_size() < page_table_size)
                 {
-                    page_table.push(process);
+                    // Search for the process in the page table
+                    int pos = page_table.find(process);
 
-                    // Increase number of page faults
-                    init.page_faults++;
+                    if(pos != -1)
+                    {
+                        page_table.update(process);
+                    }
+                    else
+                    {
+                        page_table.push(process);
+
+                        // Increase number of page faults
+                        init.page_faults++;
+                    }
                 }
                 else
                 {
@@ -78,7 +91,7 @@ namespace page_replacement
                 }
             }
 
-            std::cout << "Number of page frames: " << page_table_size
+            std::cout << "Number of page frames: " << frames
                       << "\nNumber of page faults: " << init.page_faults
                       << std::endl;
         }
