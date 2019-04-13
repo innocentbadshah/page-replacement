@@ -57,7 +57,6 @@ namespace util
         ~stack()
         {
             delete [] s;
-            delete s;
         }
     
     private:

@@ -28,6 +28,13 @@ Following are the pre-requisites to building:
 * CMake (Preferred)
 ```
 
+**Note:** To run *graph.py* to generate graphs for the benchmarks, you require to install `matplotlib`
+and `tkinter`. For Ubuntu/Debian systems, the commands are as follows:
+```
+$ sudo apt install python-tk
+$ pip install matplotlib
+```
+
 ### Building
 
 The complete code for the LRU and clock are given as header files for easy and convinient use.
@@ -56,6 +63,13 @@ If you have done the setup right, you should see 4 executables `lru_aging`, `lru
 ```
 $ ./lru_counter
 ```
+
+Once all executables are in place, we can plot the graph from the given output. To generate
+graph, run graph.py:
+```
+$ python2 graph.py
+```
+
 
 **Note:** In case you do not have Cmake installed, you can use a fallback makefile option.
 To get the above executables, simply run the *Makefile* provided in the *benchmarks* folder.
