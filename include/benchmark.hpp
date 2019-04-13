@@ -9,10 +9,10 @@ namespace tools
 {
     class Benchmark
     {
-    private:
-        /* data */
     public:
-        Benchmark(/* args */);
+        // Number of page_faults
+        int page_faults = 0;
+        Benchmark() = default;
     };    
 }
 

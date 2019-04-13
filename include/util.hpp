@@ -9,12 +9,21 @@
 
 namespace util
 {
-    class Min
+    bool Min(std::pair<int, int> a, std::pair<int, int> b)
+    {
+        return a.second < b.second;
+    }
+
+    class Search
     {
     public:
-        bool operator()(std::pair<int, int> a, std::pair<int, int> b)
+        int val;
+
+        Search(int v) :val(v) {}
+
+        bool operator()(const std::pair<int, int> a) const
         {
-            return a.second > b.second;
+            return (a.first == val);
         }
     };
 } // util
