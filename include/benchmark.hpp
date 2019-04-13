@@ -5,6 +5,8 @@
 #ifndef BENCHMARK
 #define BENCHMARK
 
+#include <memory>
+
 namespace tools
 {
     class Benchmark
@@ -13,7 +15,7 @@ namespace tools
         // Number of page_faults
         int page_faults = 0;
         Benchmark() = default;
-    };    
+    };
 }
 
 #endif /* BENCHMARK */
