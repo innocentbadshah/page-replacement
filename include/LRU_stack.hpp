@@ -32,7 +32,7 @@ namespace page_replacement
                 
                 page_table_size = size;
 
-                frames = processes.size();
+                // frames = processes.size();
 
                 page_table.init(page_table_size);
             }    
@@ -44,7 +44,7 @@ namespace page_replacement
             // Custom stack implementation for stack implementation
             util::stack page_table;
             std::vector<int> incoming_process;
-            int frames;
+            // int frames;
 
             // Benchmarking tool
             tools::Benchmark init;
@@ -91,7 +91,7 @@ namespace page_replacement
                 }
             }
 
-            std::cout << "Number of page frames: " << frames
+            std::cout << "Number of page frames: " << page_table_size
                       << "\nNumber of page faults: " << init.page_faults
                       << std::endl;
         }

@@ -31,7 +31,7 @@ namespace page_replacement
                 
                 page_table_size = size;
 
-                frames = processes.size();
+                // frames = processes.size();
             }
 
             // Simulate function
@@ -41,7 +41,7 @@ namespace page_replacement
             // Counter to every Page
             std::vector<std::pair<int, int>> page_table;
             std::vector<int> incoming_process;
-            int frames;
+            // int frames;
 
             // Benchmarking tool
             tools::Benchmark init;
@@ -116,7 +116,7 @@ namespace page_replacement
                 counter++;
             }
 
-            std::cout << "Number of page frames: " << frames
+            std::cout << "Number of page frames: " << page_table_size
                       << "\nNumber of page faults: " << init.page_faults
                       << std::endl;
         }

@@ -32,7 +32,7 @@ namespace page_replacement
                 
                 page_table_size = size;
 
-                frames = processes.size();
+                // frames = processes.size();
             }
 
             void simulate();
@@ -137,7 +137,7 @@ namespace page_replacement
                 }
             }
 
-            std::cout << "Number of page frames: " << frames
+            std::cout << "Number of page frames: " << page_table_size
                       << "\nNumber of page faults: " << init.page_faults
                       << std::endl;
         }
